@@ -5,7 +5,17 @@ import tseslint from 'typescript-eslint';
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
-    ignores: ['node_modules/', 'dist/', 'build/', 'www', 'tailwind.config.js'],
+  },
+  {
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+      'www',
+      'tailwind.config.js',
+      '.angular/',
+      'src/app/utility/error-format.ts',
+    ],
   },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,

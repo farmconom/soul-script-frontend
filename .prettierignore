@@ -3,3 +3,4 @@ dist/
 build/
 www
 tailwind.config.js
+.angular/
