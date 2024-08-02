@@ -10,11 +10,25 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-
   background-color: #011320;
 
   background-image: url('assets/images/bg-waves.png'); // Replace with your image path
   background-size: cover; // Ensures the image covers the entire container
   background-position: center; // Centers the image
   background-repeat: no-repeat; // Prevents the image from repeating
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInSlideIn 150ms forwards;
 }

@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
     const tokens = this.authService.getCredentialTokens();
     if (isEmpty(tokens)) {
       this.userService.logout(true);
-      this.router.navigateByUrl('/auth');
+      this.router.navigateByUrl('/landing');
       return false;
     }
     const user = await firstValueFrom(this.userService.user$);

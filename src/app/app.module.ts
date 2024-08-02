@@ -11,10 +11,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AuthComponent } from './pages/auth/auth.component';
 import { FeaturesComponent } from './pages/features/features.component';
+import { ComponentsModule } from './components/components.module';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPagePage, AuthComponent, FeaturesComponent],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule, MatButtonModule],
+  declarations: [
+    AppComponent,
+    NotFoundPagePage,
+    AuthComponent,
+    FeaturesComponent,
+    LandingPageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, MatIconModule, MatButtonModule, ComponentsModule],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })

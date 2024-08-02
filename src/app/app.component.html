@@ -1,1 +1,9 @@
-<router-outlet />
+<section>
+  <ng-container *ngIf="isShowSideMenu">
+    <app-side-menu />
+  </ng-container>
+
+  <ng-container>
+    <router-outlet />
+  </ng-container>
+</section>
