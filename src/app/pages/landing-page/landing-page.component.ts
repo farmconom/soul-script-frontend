@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalService } from 'app/services/global.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,6 +10,8 @@ export class LandingPageComponent {
   textToType: string = 'Soul Script';
   displayText: string = '';
   typingSpeed: number = 150; // Speed in milliseconds
+
+  constructor(public global: GlobalService) {}
 
   ngOnInit(): void {
     this.startTyping();
