@@ -71,3 +71,28 @@
     transform: translateY(0);
   }
 }
+
+.typing-container {
+  overflow: hidden;
+}
+
+.cursor {
+  display: inline-block;
+  color: transparent;
+  background-color: #ffffff49;
+  width: 4px;
+  margin-left: 10px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
