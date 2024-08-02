@@ -1,1 +1,47 @@
-<p>sign-in works!</p>
+<section class="w-full h-full flex items-center justify-center">
+  <mat-card class="sign-in-card" appearance="raised">
+    <mat-card-header class="justify-center items-center flex-col">
+      <mat-card-title class="text-gray-600 !mb-3">Sign In</mat-card-title>
+      <mat-card-subtitle class="!text-gray-500"
+        >Welcome back! Please login to your account.</mat-card-subtitle
+      >
+      <div class="!text-gray-500 !my-2 px-4 text-center w-full">
+        No account?
+        <span
+          (click)="global.onRedirect('/auth/sign-up')"
+          class="text-primary-500 hover:text-primary-400 transition cursor-pointer"
+          >Create account</span
+        >
+      </div>
+    </mat-card-header>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field class="w-full">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required />
+          <mat-error *ngIf="signInForm.get('email')?.invalid">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="passwordHidden"
+          >
+            <mat-icon>{{ passwordHidden ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error *ngIf="signInForm.get('password')?.invalid">Password is required</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="flex justify-between">
+        <button mat-button type="button">Forgot Password?</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="signInForm.invalid">
+          Sign In
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>
