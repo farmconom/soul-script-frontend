@@ -1,0 +1,30 @@
+:host .sign-in-card {
+  max-width: 450px;
+  width: 100%;
+  padding: 16px;
+  box-shadow: 0px 3px 6px #00000029;
+  gap: 1rem;
+}
+
+:host mat-card-header {
+  text-align: center;
+}
+
+:host mat-card-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+:host mat-card-subtitle {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+:host mat-form-field {
+  margin-bottom: 16px;
+}
+
+:host mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
